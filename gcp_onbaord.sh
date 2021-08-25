@@ -23,5 +23,5 @@ echo "Creating Pyspark Cluster..."
 gcloud dataproc clusters create my_cluster \
 --region=$REGION \
 --initialization-actions= gs://$PROJECT_ID/cluster/cluster_initialize.sh \
---num-workers=10 \
+--num-workers=5 \
 ---max-age="2h"
