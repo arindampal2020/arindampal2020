@@ -11,7 +11,7 @@ echo "Downloading Data"
 git clone https://github.com/dgadiraju/nyse_all.git
 gsutil cp -r nyse_all gs://$PROJECT_ID/data
 echo "Creating MY SQL instances in Cloud..."
-gcloud sql instances create myinstance \
+gcloud sql instances create myappdb \
 --database-version=MYSQL_5_7  \
 --cpu=2 \
 --memory=7680MB \
