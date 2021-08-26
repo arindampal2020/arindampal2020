@@ -12,7 +12,7 @@ git clone https://github.com/dgadiraju/nyse_all.git
 gsutil -m cp -r nyse_all gs://$PROJECT_ID/data
 echo "Creating MY SQL instances in Cloud..."
 gcloud sql instances create myappdb --database-version=MYSQL_5_7  --cpu=2 --memory=7680MB --region=$REGION --storage-type SSD --storage-size 10GB --activation-policy=ALWAYS
-gcloud sql users set-password root --host % --instance flights  --password changeme
+gcloud sql users set-password root --host % --instance myappdb  --password changeme
 export ADDRESS=$(wget -qO - http://ipecho.net/plain)/32
 gcloud sql instances patch myappdb --authorized-networks $ADDRESS
 echo "Creating Pyspark Cluster..."
