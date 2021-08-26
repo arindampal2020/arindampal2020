@@ -5,6 +5,6 @@ export ADDRESS=$(wget -qO - http://ipecho.net/plain)/32
 echo "Updating MY SQL network"
 gcloud sql instances patch flights --authorized-networks $ADDRESS
 echo "Updating config.xml"
-gsutil cp ./t-talks-handson/common/config.xml gs://$PROJECT_ID/app/t-talks-handson/common/config.xml
+gsutil cp ./t-talks-handson/main/config.xml gs://$PROJECT_ID/app/t-talks-handson/main/config.xml
 echo "Creating Pyspark Cluster..."
 gcloud dataproc clusters create my-cluster --region=$REGION --initialization-actions="gs://${PROJECT_ID}/cluster_initialize.sh" --num-workers=3 --max-age="2h"
