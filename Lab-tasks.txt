@@ -5,5 +5,6 @@
 5.gsutil cp config.xml to bucket
 6.Create cluster by running create cluster script
 7.Update my sql netwrok with cluster VM public IP
-8.Submit Spark Job
+8.Insert stocks in my_sql
+9.Submit Spark Job Check Connectivity
 
