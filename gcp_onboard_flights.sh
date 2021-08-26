@@ -21,4 +21,4 @@ for FILE in 201501.csv 201502.csv; do
    counter=$((counter+1))
 done
 
-mysqlimport --local --host=$MYSQLIP --user=root -p Passw0rd --ignore-lines=1 --fields-terminated-by=',' bts flights.csv-*
+mysqlimport --local --host=$MYSQLIP --user=root -pPassw0rd --ignore-lines=1 --fields-terminated-by=',' bts flights.csv-*
