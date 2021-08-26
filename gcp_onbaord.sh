@@ -1,4 +1,4 @@
-export PROJECT_ID=$(gcloud config get-value project)
+export PROJECT_ID=$(gcloud config get-value project)-ml
 export REGION="us-central1"
 echo "Current Project id $PROJECT_ID and region is $REGION"
 echo "Downloading onboarding  scripts"
@@ -16,4 +16,4 @@ gcloud sql users set-password root --host % --instance myappdb  --password chang
 export ADDRESS=$(wget -qO - http://ipecho.net/plain)/32
 gcloud sql instances patch myappdb --authorized-networks $ADDRESS
 echo "Creating Pyspark Cluster..."
-gcloud dataproc clusters create my_cluster --region=$REGION --initialization-actions="gs://$PROJECT_ID/cluster/cluster_initialize.sh" --num-workers=5 ---max-age="2h"
+gcloud dataproc clusters create my-cluster --region=$REGION --initialization-actions="gs://${PROJECT_ID}/cluster_initialize.sh" --num-workers=5 --max-age="2h"
