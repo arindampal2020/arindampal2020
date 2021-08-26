@@ -12,3 +12,5 @@ CREATE TABLE `stock_eod` (
   `volume` bigint(20) DEFAULT NULL,
   PRIMARY KEY (`stockticker`,`tradedate`)
 );
+SHOW TABLES;
+DESC stock_eod;
