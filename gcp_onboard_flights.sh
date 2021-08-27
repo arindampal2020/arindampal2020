@@ -4,7 +4,7 @@ export PROJECT_ID=$(gcloud info --format='value(config.project)')
 export BUCKET=${PROJECT_ID}-ml
 export REGION="us-central1"
 echo "Create Cloud Instances"
-gcloud sql instances create flights   --tier=db-n1-standard-1 --activation-policy=ALWAYS --region $REGION --zone ${REGION}-a
+gcloud sql instances create flights   --tier=db-n1-standard-1 --activation-policy=ALWAYS --region $REGION 
 gcloud sql users set-password root --host % --instance flights  --password Passw0rd
 
 export ADDRESS=$(wget -qO - http://ipecho.net/plain)/32
