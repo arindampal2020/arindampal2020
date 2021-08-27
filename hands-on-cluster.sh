@@ -1,3 +1,4 @@
+#!/bin/bash
 export PROJECT_ID=$(gcloud config get-value project)-ml
 export REGION="us-central1"
 echo "Current Project id $PROJECT_ID and region is $REGION"
