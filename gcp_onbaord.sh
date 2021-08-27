@@ -11,5 +11,5 @@ echo "Downloading Data"
 git clone https://github.com/dgadiraju/nyse_all.git
 gsutil -m cp -r nyse_all gs://$BUCKET/data
 echo "Creating MY SQL instances in Cloud..."
-#gcloud sql instances create myappdb --database-version=MYSQL_5_7  --cpu=2 --memory=7680MB --region=$REGION --storage-type SSD --storage-size 10GB --activation-policy=ALWAYS
+#gcloud sql instances create myappdb --database-version=MYSQL_5_7  --cpu=2 --memory=7680MB --region=$REGION --zone ${REGION}-a --storage-type SSD --storage-size 10GB --activation-policy=ALWAYS
 #gcloud sql users set-password root --host % --instance myappdb  --password changeme
