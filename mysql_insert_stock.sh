@@ -2,7 +2,7 @@
 export PROJECT_ID=$(gcloud config get-value project)
 export REGION="us-central1"
 export MYSQLIP=$(gcloud sql instances describe flights --format="value(ipAddresses.ipAddress)")
-mysql -uroot -pchangeme -h $MYSQLIP < 01_nyse_create_table_quickstart.sql
+mysql -uroot -pPassw0rd -h $MYSQLIP < 01_nyse_create_table_quickstart.sql
 gunzip ./nyse_all/nyse_data/
 for f in ./nyse_all/nyse_data/*.txt
 do
